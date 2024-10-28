@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CRUD SYSTEM</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=PT+Sans+Caption:wght@400;700&family=Pacifico&family=Righteous&display=swap"
+        rel="stylesheet">
+<link rel="stylesheet" href="css/bootstrap.min.css">
+<link rel="stylesheet" href="css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div class="container rounded p-5 mt-5">
+<div class="text-center p-2">
+    <h1>CRUD SYSTEM</h1>
+
+</div>
+<div class="">
+<input oninput="validation(this,'msgName')" type="text" class="form-control mb-2" id="Name" placeholder="ProductName">
+<div class="alert alert-danger d-none" id="msgName">Name is invalid</div>
+</div>
+<div class="">
+<input oninput="validation(this,'msgPrice')" type="number" class="form-control mb-2" id="price" placeholder="ProductPrice">
+<div class="alert alert-danger d-none" id="msgPrice">Price is invalid</div>
+
+</div>
+
+<div class="">
+<input oninput="validation(this,'msgCategory')" type="text" class="form-control mb-2" id="category" list="caat" placeholder="ProductCategory">
+
+<datalist id="caat">
+    <option value="tv"></option>
+    <option value="mobile"></option>
+    <option value="screen"></option>
+</datalist>
+<div class="alert alert-danger d-none" id="msgCategory">Category is invalid</div>
+
+</div>
+
+<div class="">
+    <textarea oninput="validation(this,'msgDescription')" type="text" class="form-control mb-2" id="desc" placeholder="ProductDescription"></textarea>
+    <div class="alert alert-danger d-none" id="msgDescription">Description is invalid</div>
+
+    </div>
+<div class="">
+<input onchange="validation(this,'msgImg')" type="file" class="form-control mb-2" id="img" placeholder="ProductImage" >
+<div class="alert alert-danger d-none" id="msgImg">Image is invalid</div>
+
+</div>
+<button onclick="addProduct()" id="addBtn" class="btn mt-2  text-bg-danger addBtn">AddProduct</button>
+<button onclick="update()" id="updateBtn" class="btn mt-2 text-bg-success updateBtn d-none">UpdateProduct</button>
+
+</div>
+<input oninput="displayProduct()" type="search" id="searchInput" class="form-control my-2 container " placeholder="search">
+<table class="table text-center">
+    <thead>
+        <tr>
+            <th>
+                ID
+            </th>
+            <th>
+                Name
+            </th>
+            <th>
+                Price
+            </th>
+            <th>
+                Category
+            </th>
+            <th>
+                Description
+            </th>
+            <th>
+                Image
+            </th>
+            <th>
+                Action
+            </th>
+        </tr>
+    </thead>
+    <tbody id="demo">
+    </tbody>
+</table>
+    <script src="js/main.js"></script>
+</body>
+</html>
